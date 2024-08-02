@@ -11,11 +11,15 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      
+    - name: Print Environment Variables
+      run: |
+        echo "SSH_PRIVATE_KEY=${{ secrets.SSH_PRIVATE_KEY }}"
 
     - name: Set up SSH
       uses: webfactory/ssh-agent@v0.5.3
-      # with:
-      #   ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Deploy to Server
       run: |
