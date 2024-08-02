@@ -4,7 +4,7 @@
 cd /root/filesystem/home/frontend
 
 # Pull the latest changes
-git pull origin main
+git pull origin development
 
 # Install dependencies
 npm install
